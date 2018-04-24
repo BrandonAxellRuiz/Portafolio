@@ -15,7 +15,7 @@ var div_body = `<div class="post-wrapper wow fadeIn" data-wow-delay="0.2s" v-for
     <!--Featured image -->
 
     <!--Carousel Wrapper-->
-        <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+        <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel" v-mode="key">
             <!--Indicators-->
             <ol class="carousel-indicators">
                 <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
