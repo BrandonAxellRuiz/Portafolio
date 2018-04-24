@@ -70,19 +70,26 @@
         .list-group-item:not(.active):hover {
             color: #666;
         }
+
         .card {
             font-weight: 300;
         }
+
         .navbar .btn-group .dropdown-menu a:hover {
             color: #000 !important;
         }
+
         .navbar .btn-group .dropdown-menu a:active {
             color: #fff !important;
+        }
+        .hidden{
+            display: none !important;
         }
     </style>
 
     <!-- include vue -->
     <link rel="manifest" href="manifest.json">
+    
 </head>
 
 <body>
@@ -112,7 +119,7 @@
     </header>
 
     <main>
-        
+
         <br>
         <br>
         <br>
@@ -120,11 +127,11 @@
         <div class="container">
             <div class="row">
                 <!--Main column-->
-                <div class="col-lg-8">                     
+                <div class="col-lg-8">
                     <div id="data_load">
                         <!--Post-->
                         <items_data_load></items_data_load>
-                        <items_pagination></items_pagination>     
+                        <items_pagination></items_pagination>
                     </div>
                 </div>
 
@@ -148,21 +155,24 @@
                         <br>
                         <div class="card">
                             <div class="card-body">
-                                <p><strong>Send Me A Email</strong></p>
+                                <p>
+                                    <strong>Send Me A Email</strong>
+                                </p>
                                 <p>Contact me and we will find the best option for you and your business.</p>
-                                <div class="md-form">
-                                    <i class="fa fa-user prefix"></i>
-                                    <input type="text" id="compose-subject" name="compose-subject" class="form-control">
-                                    <label for="form1">Subject</label>
+                                <button id="authorize-button" class="btn btn-primary hidden">Authorize send email</button>
+                                <div class="hidden" id="compose-button">
+                                    <div class="md-form">
+                                        <i class="fa fa-mobile-phone prefix"></i>
+                                        <input type="text" id="compose-phone" name="compose-phone" class="form-control">
+                                        <label for="form1">Phone</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <i class="fa fa-comments prefix"></i>
+                                        <input type="text" id="compose-message" name="compose-message" class="form-control">
+                                        <label for="form2">Message</label>
+                                    </div> 
+                                    <button onclick="sendEmail()" class="btn btn-info" id="send-button">Submit</button>
                                 </div>
-                                <div class="md-form">
-                                    <i class="fa fa-comments-o"></i>
-                                    <textarea type="text" id="form2" class="form-control"></textarea>
-                                    <label for="form2">Message</label>
-                                        
-                                </div>
-                                <button class="btn btn-info">Submit</button>
-
                             </div>
                         </div>
                     </div>
@@ -180,7 +190,8 @@
         <!--Copyright-->
         <div class="footer-copyright">
             <div class="container-fluid">
-                © 2017 Copyright: <a href=""> BackHome | Brandon Axell Ruiz </a>
+                © 2017 Copyright:
+                <a href=""> BackHome | Brandon Axell Ruiz </a>
 
             </div>
         </div>
@@ -197,11 +208,16 @@
     <!-- fire -->
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-    
+        
+    <!-- mail -->
+    <script src="js/mail.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+
     <!-- VUE -->
     <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.0/vue-resource.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
     <!-- Bootstrap dropdown -->
     <script type="text/javascript" src="js/popper.min.js"></script>
 
