@@ -1,7 +1,5 @@
 const crud = new Firebase("https://backhome-16b56.firebaseio.com/Portafolio/");
 
-
-
 var div_body = `<div class="post-wrapper wow fadeIn" data-wow-delay="0.2s" v-for="(item, key) in DataRecive" :key="key">
     <!--Post data-->
     <h1 class="h1-responsive font-bold">{{item.Client}}
@@ -15,12 +13,13 @@ var div_body = `<div class="post-wrapper wow fadeIn" data-wow-delay="0.2s" v-for
     <!--Featured image -->
 
     <!--Carousel Wrapper-->
-        <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+ 
+        <div :id="key" class="carousel slide carousel-fade" data-ride="carousel">
             <!--Indicators-->
             <ol class="carousel-indicators">
-                <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-                <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+                <li :data-target="'#'+key+''" data-slide-to="0" class="active"></li>
+                <li :data-target="'#'+key+''" data-slide-to="1"></li>
+                <li :data-target="'#'+key+''" data-slide-to="2"></li>
             </ol>
             <!--/.Indicators-->
             <!--Slides-->
@@ -51,11 +50,11 @@ var div_body = `<div class="post-wrapper wow fadeIn" data-wow-delay="0.2s" v-for
             </div>
             <!--/.Slides-->
             <!--Controls-->
-            <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev" title="Previous">
+            <a class="carousel-control-prev" :href="'#'+key+''" role="button" data-slide="prev" title="Previous">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next" title="Next">
+            <a class="carousel-control-next" :href="'#'+key+''" role="button" data-slide="next" title="Next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
@@ -75,12 +74,14 @@ var div_body = `<div class="post-wrapper wow fadeIn" data-wow-delay="0.2s" v-for
 
     <!--"Read more" button-->
     <a class="btn btn-info" :href="item.UrlVisit" target="_blank">Visitar</a>
+    <br>
+    <br>
+    <hr>
+    <hr>
 </div>
 <!--/.Post-->
-<hr>
-<hr>
-<br>
-<br>
+
+
 `;
 
 var pagination = `
