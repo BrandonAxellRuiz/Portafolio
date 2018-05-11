@@ -39,11 +39,23 @@
     <!-- include vue -->
     <link rel="manifest" href="manifest.json">
     
-    <link href="js/fbSDK.js">
+    <link href="js/fbSdk.js">
     
 </head>
 
 <body>
+    <!-- fb -->
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat"
+      attribution="setup_tool"
+      page_id="1843146869053586"
+      theme_color="#4E342E"
+      logged_in_greeting="Hola, en qué puedo ayudarte?"
+      logged_out_greeting="Hola, en qué puedo ayudarte?">
+    </div>
+
     <header>
         <!--Navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
