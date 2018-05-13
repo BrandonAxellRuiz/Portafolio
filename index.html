@@ -41,6 +41,20 @@
     
     <script src="js/fbSdk.js"></script>
     
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "f5fff2b9-ef1a-4a18-83ab-305dc84a98a1",
+          autoRegister: false,
+          notifyButton: {
+            enable: true,
+          },
+        });
+      });
+    </script>
+    
 </head>
 
 <body>
